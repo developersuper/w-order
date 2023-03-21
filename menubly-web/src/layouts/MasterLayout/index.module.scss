@@ -1,0 +1,10 @@
+.masterlayoutside {
+  &-navbar {
+    min-height: 300px;
+  }
+  &-logout {
+    @media screen and (max-height: 600px) {
+      bottom: auto;
+    }
+  }
+}

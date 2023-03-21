@@ -1,0 +1,13 @@
+.header {
+  &-name {
+    @apply text-primary-500 text-2.5xl font-semibold flex items-center;
+  }
+
+  &-sub {
+    @apply text-dark-100 text-sm font-medium;
+  }
+
+  &-icon {
+    @apply text-xl ml-2 -mt-1.5;
+  }
+}

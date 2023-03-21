@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'assets/styles/typography.scss';
+@import 'assets/styles/spinner.scss';
+@import 'assets/styles/toast.scss';
+@import 'assets/styles/tabs.scss';
+@import 'assets/styles/inputs.scss';
+
+@layer base {
+  [data-theme="white"] {
+    --color-box-class: 246, 75, 127;
+    --color-box-time: 0, 191, 214;
+    --color-box-attendance: 0, 113, 206;
+    --color-light-50: 255, 253, 204;
+    --color-warning-500: 199, 121, 56;
+  }
+
+  [data-theme="dark"] {
+    --color-box-class: 235, 71, 84;
+    --color-box-time: 235, 156, 196;
+    --color-box-attendance: 37, 118, 185;
+    --color-light-50: 255, 253, 204;
+    --color-warning-500: 250, 152, 71;
+  }
+
+  body {
+    margin: 0;
+    padding: 0 0;
+    background-color: #fff;
+    @apply font-primary font-normal;
+    a {
+      @apply text-primary-light hover:underline;
+    }
+  }
+
+  * {
+    min-width: 0;
+    min-height: 0;
+  }
+  textarea::placeholder,
+  input::placeholder {
+    font-size: 16px;
+    font-weight: normal !important;
+    color: #C1C7DE;
+
+  }
+  .styles-module_tooltip__mnnfp {
+    pointer-events: auto !important;
+  }
+
+  .modal {
+    @apply px-4;
+  }
+
+}
+
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+
+  /* Chrome, Edge, and Safari */
+  .hiddenScroll::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .hiddenScroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .hiddenScroll::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+
+  /* Chrome, Edge, and Safari */
+  .hiddenScroll2::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .hiddenScroll2:hover::-webkit-scrollbar {
+    opacity: 1;
+  }
+  .hiddenScroll2::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .hiddenScroll2::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, .5);
+    border-radius: 20px;
+  }
+  .scroll-content {
+    height: 100%;
+  }
+  .ns-container {
+    height: 100% !important;
+    border-radius: 42px;
+  }
+  .previewPage jdiv {
+    display: none;
+  }

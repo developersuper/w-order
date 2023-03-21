@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Menubly.Migrator": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

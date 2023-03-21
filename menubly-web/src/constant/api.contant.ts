@@ -1,0 +1,26 @@
+export const HOST_URL = process.env.REACT_APP_API_ENDPOINT;
+
+export const AUTH = {
+  VERIFY_EMAIL: "/auth/sign-in",
+  SIGN_IN: "/auth/sign-in",
+  SIGN_UP: "/auth/sign-up",
+  FORGOT_PASSWORD: "/auth/forgot-password",
+  RESET_PASSWORD: "/auth/reset-password",
+  LOGOUT: "/auth/logout",
+  PASSWORD: "/users/me/password",
+  REFRESH_TOKEN: "/auth/refresh-token",
+  USER_PROFILE: (userId: string) => `/users/${userId}/profiles`,
+  USER_ME: "/users/me",
+  UPLOAD_AVATAR: "/resources/upload-url",
+  UPLOAD_FILE: (userId: string) => `/users/${userId}/files`,
+  UPLOAD_AVATAR_FORM_DATA: "",
+  UPLOAD_AVATR_FINAL: "/users/me/avatar",
+  PASSCODE: "/auth/passcode",
+  PLACES: (userId: string) => `/users/${userId}/places`,
+  PLACES_FIRST: (userId: string) => `/users/${userId}/first_place`,
+  PLACES_BY_ID: (userId: string, placeId?: string) => `/users/${userId}/places/${placeId}`,
+  CATEGORY: (userId: string, placeId?: string) => `/users/${userId}/places/${placeId}/categories`,
+  MENU_ITEM: (userId: string) => `/users/${userId}/menu-items`,
+  MENU_ITEM_BY_ID: (userId: string, menuId?: string) => `/users/${userId}/menu-items/${menuId}`,
+  PLACES_PUBLIC: (name?: string) => `/places/${name}`,
+};

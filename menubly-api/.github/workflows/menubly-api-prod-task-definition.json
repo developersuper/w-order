@@ -1,0 +1,134 @@
+{
+  "taskDefinitionArn": "arn:aws:ecs:us-east-1:321510835180:task-definition/menubly-api-task-definition:1",
+  "containerDefinitions": [
+      {
+          "name": "menubly-api",
+          "image": "321510835180.dkr.ecr.us-east-1.amazonaws.com/menubly-api:latest",
+          "cpu": 0,
+          "portMappings": [
+              {
+                  "name": "menubly-api-80-tcp",
+                  "containerPort": 80,
+                  "hostPort": 80,
+                  "protocol": "tcp",
+                  "appProtocol": "http"
+              }
+          ],
+          "essential": true,
+          "environment": [
+              {
+                  "name": "ASPNETCORE_ENVIRONMENT",
+                  "value": "Production"
+              },
+              {
+                  "name": "DOTNET_ENVIRONMENT",
+                  "value": "Production"
+              }
+          ],
+          "environmentFiles": [],
+          "mountPoints": [],
+          "volumesFrom": [],
+          "logConfiguration": {
+              "logDriver": "awslogs",
+              "options": {
+                  "awslogs-create-group": "true",
+                  "awslogs-group": "/ecs/menubly-api-task-definition",
+                  "awslogs-region": "us-east-1",
+                  "awslogs-stream-prefix": "ecs"
+              }
+          },
+          "secrets": [
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_Authority::",
+              "name": "AwsCognito:Authority"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_AwsAccessKeyId::",
+              "name": "AwsCognito:AwsAccessKeyId"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_AwsSecretKey::",
+              "name": "AwsCognito:AwsSecretKey"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_UserPoolClientId::",
+              "name": "AwsCognito:UserPoolClientId"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_UserPoolId::",
+              "name": "AwsCognito:UserPoolId"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:AwsCognito_UserPoolRegion::",
+              "name": "AwsCognito:UserPoolRegion"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:ConnectionStrings_MenublyDatabase::",
+              "name": "ConnectionStrings:MenublyDatabase"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:SendGrid_ApiKey::",
+              "name": "SendGrid:ApiKey"
+            },
+            {
+              "valueFrom": "arn:aws:secretsmanager:us-east-1:321510835180:secret:prod/menubly-api/configs-d4nWje:Sentry_Dsn::",
+              "name": "Sentry:Dsn"
+            }
+          ]
+      }
+  ],
+  "family": "menubly-api-task-definition",
+  "executionRoleArn": "arn:aws:iam::321510835180:role/ecsTaskExecutionRole",
+  "networkMode": "awsvpc",
+  "revision": 1,
+  "volumes": [],
+  "status": "ACTIVE",
+  "requiresAttributes": [
+      {
+          "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+      },
+      {
+          "name": "ecs.capability.execution-role-awslogs"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.ecr-auth"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      },
+      {
+          "name": "ecs.capability.execution-role-ecr-pull"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+      },
+      {
+          "name": "ecs.capability.task-eni"
+      },
+      {
+          "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+      }
+  ],
+  "placementConstraints": [],
+  "compatibilities": [
+      "EC2",
+      "FARGATE"
+  ],
+  "requiresCompatibilities": [
+      "FARGATE"
+  ],
+  "cpu": "512",
+  "memory": "1024",
+  "runtimePlatform": {
+      "cpuArchitecture": "X86_64",
+      "operatingSystemFamily": "LINUX"
+  },
+  "registeredAt": "2023-02-27T14:57:04.850Z",
+  "registeredBy": "arn:aws:iam::321510835180:user/trung.tran@menubly.com",
+  "tags": [
+      {
+          "key": "env",
+          "value": "production"
+      }
+  ]
+}

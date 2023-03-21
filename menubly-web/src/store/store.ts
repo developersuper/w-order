@@ -1,0 +1,19 @@
+import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import userReducer from "./slices/user/userSlice";
+import placeReducer from "./slices/places/placeSlice";
+
+export const store = configureStore({
+  reducer: {
+    user: userReducer,
+    places: placeReducer
+  },
+});
+
+export type AppDispatch = typeof store.dispatch;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  RootState,
+  unknown,
+  Action<string>
+>;
