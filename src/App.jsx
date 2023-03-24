@@ -28,7 +28,7 @@ const menus = [
 
 function App() {
   const sendOrder = () => {
-    let url = `wahtsapp://send?phone=+123456789?text=${encodeURI('shit message')}`;
+    let url = `whatsapp://send?phone=+123456789?text=${encodeURI('shit message')}`;
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       window.open(url);
     } else {
