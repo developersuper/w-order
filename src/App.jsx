@@ -15,7 +15,7 @@ function App() {
   const sendToWhatsapp = () => {
     let message = `price: ${price}, count: ${count}, total: ${count * price}`;
     let url = `https://wa.me/${phoneNumber}?text=${encodeURI(message)}`;
-    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       // The user is accessing the website from a mobile device
       window.open(url, '_blank');
     } else {
