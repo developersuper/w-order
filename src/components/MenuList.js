@@ -7,22 +7,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import Avatar from '@mui/material/Avatar'
 import CartButtonOnMenuItem from './CartButtonOnMenuItem'
 
-const menus = [
-  {
-    title: 'Dish1',
-    description: 'description, ..,.,. blabla....',
-  },
-  {
-    title: 'Dish2',
-    description: 'description, ..,.,. blabla....',
-  },
-  {
-    title: 'Dish3',
-    description: 'description, ..,.,. blabla....',
-  },
-]
-
-export default function MenuList() {
+export default function MenuList({ menus }) {
   const [counts, setCounts] = useState([...Array.from({ length: menus.length }, (x) => 0)])
 
   const setCount = (idx) => (value) => {

@@ -12,18 +12,29 @@ const menus = [
   {
     title: 'Dish1',
     description: 'description, ..,.,. blabla....',
+    price: 3,
   },
   {
     title: 'Dish2',
     description: 'description, ..,.,. blabla....',
+    price: 5,
   },
   {
     title: 'Dish3',
     description: 'description, ..,.,. blabla....',
+    price: 6
   },
 ]
 
 function App() {
+  const sendOrder = () => {
+    let url = `wahtsapp://send?phone=+123456789?text=${encodeURI('shit message')}`;
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      window.open(url);
+    } else {
+      // The user is accessing the website from a desktop PC
+    }
+  }
   // const [phoneNumber, setPhoneNumber] = useState("84833031172");
   // const [count, setCount] = useState(0);
   // const [price, setPrice] = useState(100);
@@ -56,8 +67,8 @@ function App() {
     <>
     <CssBaseline />
     <Container maxWidth="sm">
-      <MenuList/>
-      <Button variant="contained" sx={{width: '100%'}} endIcon={<SendIcon />}>
+      <MenuList menus={menus}/>
+      <Button onClick={sendOrder} variant="contained" sx={{width: '100%'}} endIcon={<SendIcon />}>
         Send
       </Button>
     </Container>
