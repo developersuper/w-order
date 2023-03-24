@@ -54,14 +54,21 @@ function App() {
 
   return (
     <>
-    <CssBaseline />
-    <Container maxWidth="sm">
-      <MenuList/>
-      <Button variant="contained" sx={{width: '100%'}} endIcon={<SendIcon />}>
-        Send
-      </Button>
-    </Container>
-  </>
+      <CssBaseline />
+      <Container className="h-screen" maxWidth={false}>
+        <div className="h-screen flex flex-row-reverse">
+          <div className="w-1/3 p-5 border-l-2 border-gray-500">
+            <p className="text-3xl">User Info</p>
+          </div>
+          <div className="grow">
+            <MenuList/>
+            <Button variant="contained" sx={{width: '100%'}} endIcon={<SendIcon />}>
+              Send
+            </Button>
+          </div>
+        </div>
+      </Container>
+    </>
   );
 }
 

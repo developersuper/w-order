@@ -11,14 +11,17 @@ const menus = [
   {
     title: 'Dish1',
     description: 'description, ..,.,. blabla....',
+    price: 100,
   },
   {
     title: 'Dish2',
     description: 'description, ..,.,. blabla....',
+    price: 200,
   },
   {
     title: 'Dish3',
     description: 'description, ..,.,. blabla....',
+    price: 300,
   },
 ]
 
