@@ -33,6 +33,7 @@ function App() {
       window.open(url);
     } else {
       // The user is accessing the website from a desktop PC
+      window.open(url);
     }
   }
   // const [phoneNumber, setPhoneNumber] = useState("84833031172");
