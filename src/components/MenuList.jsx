@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import ButtonGroup from '@mui/material/ButtonGroup'
+import Button from '@mui/material/Button'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
@@ -7,37 +9,18 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import Avatar from '@mui/material/Avatar'
 import CartButtonOnMenuItem from './CartButtonOnMenuItem'
 
-const menus = [
-  {
-    title: 'Dish1',
-    description: 'description, ..,.,. blabla....',
-    price: 100,
-  },
-  {
-    title: 'Dish2',
-    description: 'description, ..,.,. blabla....',
-    price: 200,
-  },
-  {
-    title: 'Dish3',
-    description: 'description, ..,.,. blabla....',
-    price: 300,
-  },
-]
-
-export default function MenuList() {
-  const [counts, setCounts] = useState([...Array.from({ length: menus.length }, (x) => 0)])
-
+export default function MenuList({ menus, counts, setCounts }) {
   const setCount = (idx) => (value) => {
     counts[idx] = value
     setCounts([...counts])
   }
 
   return (
-    <List dense sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+    <List dense className='w-full md:w-7/12 md:!mr-7'>
       {menus.map((menu, idx) => {
         return (
           <ListItem
+            // className="mr-5"
             key={menu.title}
             secondaryAction={<CartButtonOnMenuItem count={counts[idx]} setCount={setCount(idx)} />}
             disablePadding

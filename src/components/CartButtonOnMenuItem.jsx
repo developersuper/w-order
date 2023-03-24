@@ -14,10 +14,10 @@ export default function CartButtonOnMenuItem({ count, setCount }) {
   return (
     <>
       <ButtonGroup disableElevation aria-label='Disabled elevation buttons'>
-        <Button onClick={addCount}>Add</Button>
-        <Button onClick={removeCount}>Remove</Button>
+        <Button onClick={addCount}>+<ShoppingCartIcon /></Button>
+        <Button onClick={removeCount}>-<ShoppingCartIcon /></Button>
       </ButtonGroup>
-      <Badge badgeContent={count} color='primary'>
+      <Badge className="ml-2" badgeContent={count} color='primary'>
         <ShoppingCartIcon color='action' />
       </Badge>
     </>
