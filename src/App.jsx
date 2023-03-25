@@ -47,7 +47,7 @@ function App() {
     }
     msg += `total:${total}`;
     // console.log(msg)
-    let url = `whatsapp://send?phone=${restaurantPhone}?text=${encodeURI(msg)}`;
+    let url = `whatsapp://send?phone=${restaurantPhone}&text=${encodeURI(msg)}`;
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
       window.open(url);
     } else {
